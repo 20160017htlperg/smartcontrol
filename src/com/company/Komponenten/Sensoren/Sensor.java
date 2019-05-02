@@ -65,7 +65,7 @@ public abstract class Sensor {
     }
 
     public void calledWithGet(Context ctx) {
-        //TODO BRUH MOMENT
+
 
         //"sensorname" : "Sensor1",
         //"unit" : "cm²"
