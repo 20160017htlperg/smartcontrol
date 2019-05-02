@@ -155,10 +155,6 @@ public abstract class Sensor {
         }
 
 
-        /**
-         * Warning: When changing the data format in the database you NEED to change the data format here too or the
-         * sensor will not be find the date.
-         */
 
         System.out.println("Gferlich: " + Database.getAmountOfEntries(sensor_id, sdf.format(fTime), sdf.format(tTime)));
         System.out.println(json);
@@ -177,12 +173,12 @@ public abstract class Sensor {
             if (fTime >= tTime) {
                 throw new TimeException("From time is higher than to time!\nError happened in Sensor.java - getData()");
             }
-            if (fTime < 0 || tTime < 0) {
+            if ((fTime < 0) || (tTime < 0)) {
                 throw new TimeException("fromTime or toTime is lower than zero!\nError happened in Sensor.java - getData()");
             }
             //TODO
             //ctx.result(Database.readSensorValuesSingle(sensor_id, fTime, tTime));
-            return;
+
         } catch (TimeException TE) {
             System.out.println("No usage of Parameters or Wrong usage of Parameters.\n" +
                     "Displaying the last 1000 database entries.\nDetailed Error message:\n" + TE.getMessage());
