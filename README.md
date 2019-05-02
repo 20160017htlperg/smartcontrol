@@ -8,12 +8,14 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install SmartCo
 
 ```bash
 pip install SmartControl
+git clone: https://gitlab.htl-perg.ac.at/smartcontrol/smartcontrol.git
 ```
 
 ## Usage
 
 ```python
 import SmartControl
+
 
 SmartControl.start # returns 'words'
 
