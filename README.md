@@ -15,9 +15,8 @@ pip install SmartControl
 ```python
 import SmartControl
 
-SmartControl.pluralize('word') # returns 'words'
-SmartControl.pluralize('goose') # returns 'geese'
-SmartControl.singularize('phenomena') # returns 'phenomenon'
+SmartControl.start # returns 'words'
+
 ```
 
 ## Contributing
