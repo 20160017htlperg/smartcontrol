@@ -2,6 +2,8 @@ package com.company.Komponenten.Schalter;
 
 import io.javalin.Context;
 
+//added this
+
 public abstract class Schalter {
     protected String Name = ""; //Name des Sensors für die Darstellung auf der Website. Der Name dient dabei als Primärschlüssl d.h. dieser muss eindeutig sein!
     protected String Tabelle = ""; //Name des Tabellenblattes fuer Logging.
