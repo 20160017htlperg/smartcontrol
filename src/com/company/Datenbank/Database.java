@@ -14,7 +14,7 @@ public class Database {
     //the databases used for this project and which should be read from.
     //Notice: the first table is the one that the values are saved in and the second one is the configuration database
     //where the Sensors will be initialized from for the Java Program.
-    //big nigger
+
     /**     +--------------------+---------------------------------------------------+
      *      | name               | what should stand in it                           |
      *      +--------------------+---------------------------------------------------+
