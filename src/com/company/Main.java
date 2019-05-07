@@ -21,6 +21,7 @@ public class Main {
         System.out.println(s2);
         String s3 = Database.readSensorValuesYearly(50, "2016-03-17 16:00:00", "2019-03-27 23:28:05");
         System.out.println(s3);
+    //TODO so fü zum dor
 
     }
 }
