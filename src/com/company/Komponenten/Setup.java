@@ -1,5 +1,6 @@
 package com.company.Komponenten;
 
+import com.company.Komponenten.Sensoren.DHT11_Sensor;
 import com.company.Komponenten.Sensoren.FakeSensor;
 import com.company.Komponenten.Sensoren.Sensor;
 
@@ -14,6 +15,7 @@ public class Setup {
 
         vsys = new Verwaltung(port);
         initSensors();
+        vsys.addToSensor(new DHT11_Sensor("DHT11_Sensor",2,"celsius",10000000,"Garage",true));
     }
 
     private void initSensors(){
