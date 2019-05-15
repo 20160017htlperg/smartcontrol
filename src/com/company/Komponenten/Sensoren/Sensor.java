@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public abstract class Sensor {
+public abstract class   Sensor {
     protected String name = "";             //Name des Sensors für die Darstellung auf der Website. Der Name dient dabei als Primärschlüssl d.h. dieser muss eindeutig sein!
     protected int sensor_id = 0;            //Sensortyp des Tabellenblattes.
     protected long interval = 0;            //Gibt den Intervall an, in dem die Messungen durchgeführt weden sollen. (Abstand zwischen den Messungen)
@@ -65,8 +65,6 @@ public abstract class Sensor {
     }
 
     public void calledWithGet(Context ctx) {
-
-
         //"sensorname" : "Sensor1",
         //"unit" : "cm²"
         //"table" : "tabelle1"
@@ -89,16 +87,12 @@ public abstract class Sensor {
     //ctx.result(Database.readSensorValuesSingle(sensor_id, 100)); amount --> letzte 100 Einträge des Typs sensor_id
 
     public void getData(Context ctx) {
-        /**
-         *
-         */
-
         String fromTime = ctx.queryParam("from");
-        System.out.println("From Time: " + fromTime);
+        //System.out.println("From Time: " + fromTime);
         String toTime = ctx.queryParam("to");
-        System.out.println("To Time: " + toTime);
+        //System.out.println("To Time: " + toTime);
         String display = ctx.queryParam("display");
-        System.out.println("Displaying: "+display);
+        //System.out.println("Displaying: "+display);
 
         if(fromTime != null && toTime != null && display != null) {
             displayDataAndAmount(ctx, fromTime, toTime, display);

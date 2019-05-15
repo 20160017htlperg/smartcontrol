@@ -1,6 +1,6 @@
 package com.company.Komponenten;
 
-import com.company.Komponenten.Schalter.Schalter;
+import com.company.Komponenten.Relais.Relais;
 import com.company.Komponenten.Sensoren.Sensor;
 import com.company.Utils.Utils;
 import io.javalin.Context;
@@ -15,37 +15,47 @@ public class Verwaltung {
     private Javalin app = null; //Server
 
     private CopyOnWriteArrayList<Sensor> SensorList = new CopyOnWriteArrayList();
-    private CopyOnWriteArrayList<Schalter> SchalterList = new CopyOnWriteArrayList();
+    private CopyOnWriteArrayList<Relais> RelaisList = new CopyOnWriteArrayList<>();
 
+    private String RelaisPath = "/relais/";
     private String SensorPath = "/sensoren/";
-    private String SchalterPath = "/schalter";
 
     public Verwaltung(int port) {
         app = Javalin.create().start(port);
         app.get(SensorPath,this::listSensor);
-        app.get(SchalterPath,this::listSchalter);
+
+    }
+
+    public boolean addToRelais(Relais r) {
+        if(RelaisList.contains(r)) {
+            return false;
+        }
+
+
+        /**TODO:
+         * Add the missing function
+         *
+         */
+        if(RelaisList.add(r)) {
+            //app.get(RelaisPath+r.getName().toLowerCase()+"/");
+        }
+
+
+        return false;
     }
 
     public boolean addToSensor(Sensor s){
         if (SensorList.contains(s))
-            return (false);
+            return false;
+
         if(SensorList.add(s)){
             app.get(SensorPath+s.getName().toLowerCase()+"/",s::calledWithGet);
             app.get(SensorPath+s.getName().toLowerCase()+"/data/",s::getData);
-            return (true);
+            return true;
         }
-        return (false);
+        return false;
     }
 
-    public boolean addToSchalter(Schalter s){
-        if (SchalterList.contains(s))
-            return (false);
-        if(SchalterList.add(s)){
-            app.get(SchalterPath+s.getName()+"/",s::calledWithGet);
-            return (true);
-        }
-        return (false);
-    }
 
     private void listSensor(Context context) {
         // TODO: Json mit allen Sensoren erstellen!
