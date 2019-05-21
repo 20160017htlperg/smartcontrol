@@ -34,10 +34,11 @@ public class Verwaltung {
 
         /**TODO:
          * Add the missing function
-         *
          */
         if(RelaisList.add(r)) {
-            //app.get(RelaisPath+r.getName().toLowerCase()+"/");
+            app.get(RelaisPath+r.getName().toLowerCase()+"/",r::calledWithGet);
+
+            return true;
         }
 
 

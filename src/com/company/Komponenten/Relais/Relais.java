@@ -1,5 +1,8 @@
 package com.company.Komponenten.Relais;
 
+import io.javalin.Context;
+
+
 public abstract class Relais {
     private String name;
     private String location;
@@ -16,6 +19,17 @@ public abstract class Relais {
         isOn = false;
     }
 
+    public void calledWithGet(Context ctx) {
+        String res = "{ " +
+                "relaisname : " + getName() + ", " +
+                "location : " + getLocation() + ", " +
+                "relais_id : " + getId() + ", " +
+                "favourite: " + favourite + ", " +
+                "ison: " + isOn + "}";
+
+        ctx.result(res);
+    }
+
     public String getName() {
         return name;
     }
@@ -30,11 +44,10 @@ public abstract class Relais {
 
     public void setOn() {
         isOn = true;
-
     }
 
     public void setOnFor(int s) {
-        //after s seconds turn the relai off
+        //after s seconds turn the relais off
     }
 
     public void setOnFromTo() {
