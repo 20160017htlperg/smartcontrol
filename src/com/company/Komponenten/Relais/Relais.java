@@ -19,6 +19,10 @@ public abstract class Relais {
         isOn = false;
     }
 
+    public void setFavourite(boolean favourite) {
+        this.favourite = favourite;
+    }
+
     public void calledWithGet(Context ctx) {
         String res = "{ " +
                 "relaisname : " + getName() + ", " +
@@ -26,7 +30,6 @@ public abstract class Relais {
                 "relais_id : " + getId() + ", " +
                 "favourite: " + favourite + ", " +
                 "ison: " + isOn + "}";
-
         ctx.result(res);
     }
 
@@ -53,7 +56,4 @@ public abstract class Relais {
     public void setOnFromTo() {
 
     }
-
-
-
 }

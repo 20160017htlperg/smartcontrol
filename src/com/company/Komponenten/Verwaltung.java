@@ -37,7 +37,7 @@ public class Verwaltung {
          */
         if(RelaisList.add(r)) {
             app.get(RelaisPath+r.getName().toLowerCase()+"/",r::calledWithGet);
-
+            
             return true;
         }
 
