@@ -14,7 +14,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class Verwaltung {
     private Javalin app = null; //Server
 
-    private CopyOnWriteArrayList<Sensor> SensorList = new CopyOnWriteArrayList();
+    private CopyOnWriteArrayList<Sensor> SensorList = new CopyOnWriteArrayList<>();
     private CopyOnWriteArrayList<Relais> RelaisList = new CopyOnWriteArrayList<>();
 
     private String RelaisPath = "/relais/";
