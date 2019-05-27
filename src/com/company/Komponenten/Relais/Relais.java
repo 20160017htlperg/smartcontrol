@@ -11,9 +11,9 @@ public abstract class Relais {
     private boolean isOn;
 
 
-    public Relais(String n, String l, int id) {
-        this.name = n;
-        this.location = l;
+    public Relais(String name, String location, int id) {
+        this.name = name;
+        this.location = location;
         this.relais_id = id;
         favourite = false;
         isOn = false;

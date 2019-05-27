@@ -23,7 +23,7 @@ public class Verwaltung {
     public Verwaltung(int port) {
         app = Javalin.create().start(port);
         app.get(SensorPath,this::listSensor);
-
+        app.get(RelaisPath,this::listRelais);
     }
 
     public boolean addToRelais(Relais r) {
@@ -72,8 +72,17 @@ public class Verwaltung {
         context.result(result);
     }
 
-    private void listSchalter(Context context){
-        context.result("");
+    private void listRelais(Context context){
+        Iterator<Relais> relaisIterator = RelaisList.iterator();
+        ArrayList<HashMap<String, String>> tmp = new ArrayList<>();
+        while(relaisIterator.hasNext()) {
+            Relais r = relaisIterator.next();
+            HashMap<String, String> hash = new HashMap<>();
+            hash.put("relaisname",r.getName());
+            tmp.add(hash);
+        }
+        String result = Utils.callJSON(tmp);
+        context.result(result);
     }
 
     private Javalin getApp(){

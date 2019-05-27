@@ -1,6 +1,5 @@
 package com.company.Komponenten;
 
-import com.company.Komponenten.Relais.Relais;
 import com.company.Komponenten.Sensoren.DHT11_Sensor;
 import com.company.Komponenten.Sensoren.FakeSensor;
 import com.company.Komponenten.Sensoren.Sensor;
@@ -19,7 +18,7 @@ public class Setup {
         vsys.addToSensor(new DHT11_Sensor("DHT11_Sensor",2,"celsius",10000000,"Garage",true));
     }
 
-    private void initSensors() {
+    private void initSensors(){
         ArrayList<Sensor> sensorAr = new ArrayList<>();
 
         sensorAr.addAll(FakeSensor.initSensor());
@@ -29,9 +28,7 @@ public class Setup {
         }
     }
 
-    private void initRelais() {
-        ArrayList<Relais> relaisAr = new ArrayList<>();
-
-        //relaisAr.addAll(Re)
+    private void initRelais(){
+        vsys.addToRelais(new FakeRelais("buchi","gucci",5));
     }
 }
