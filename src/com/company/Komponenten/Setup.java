@@ -1,5 +1,6 @@
 package com.company.Komponenten;
 
+import com.company.Komponenten.Relais.FakeRelais;
 import com.company.Komponenten.Sensoren.DHT11_Sensor;
 import com.company.Komponenten.Sensoren.FakeSensor;
 import com.company.Komponenten.Sensoren.Sensor;
