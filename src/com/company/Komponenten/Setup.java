@@ -15,7 +15,8 @@ public class Setup {
     public Setup(File configDat,int port){
 
         vsys = new Verwaltung(port);
-        initSensors();
+        //initSensors();
+        initRelais();
         vsys.addToSensor(new DHT11_Sensor("DHT11_Sensor",2,"celsius",10000000,"Garage",true));
     }
 

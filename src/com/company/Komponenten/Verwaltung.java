@@ -30,14 +30,9 @@ public class Verwaltung {
         if(RelaisList.contains(r)) {
             return false;
         }
-
-
-        /**TODO:
-         * Add the missing function
-         */
         if(RelaisList.add(r)) {
             app.get(RelaisPath+r.getName().toLowerCase()+"/",r::calledWithGet);
-            
+            app.get(RelaisPath+r.getName().toLowerCase()+"/toggle/",r::toggle);
             return true;
         }
 

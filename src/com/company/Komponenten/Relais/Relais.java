@@ -8,7 +8,6 @@ public abstract class Relais {
     private String location;
     private boolean favourite;
     private int relais_id;
-    private boolean isOn;
 
 
     public Relais(String name, String location, int id) {
@@ -16,7 +15,6 @@ public abstract class Relais {
         this.location = location;
         this.relais_id = id;
         favourite = false;
-        isOn = false;
     }
 
     public void setFavourite(boolean favourite) {
@@ -29,7 +27,7 @@ public abstract class Relais {
                 "location : " + getLocation() + ", " +
                 "relais_id : " + getId() + ", " +
                 "favourite: " + favourite + ", " +
-                "ison: " + isOn + "}";
+                "ison: " + getIsOn() + "}";
         ctx.result(res);
     }
 
@@ -45,15 +43,9 @@ public abstract class Relais {
         return relais_id;
     }
 
-    public void setOn() {
-        isOn = true;
-    }
-
-    public void setOnFor(int s) {
-        //after s seconds turn the relais off
-    }
-
-    public void setOnFromTo() {
-
-    }
+    public abstract boolean getIsOn();
+    public abstract void toggle(Context ctx);
+    public abstract void extendActiveTime(Context ctx,int time);
 }
+
+
