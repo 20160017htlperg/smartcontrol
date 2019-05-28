@@ -4,8 +4,11 @@ import io.javalin.Context;
 
 public class FakeRelais extends Relais {
 
-    public FakeRelais(String name, String location, int id) {
+    private String IP = "";
+
+    public FakeRelais(String name, String location, int id,String IP) {
         super(name, location, id);
+        this.IP = IP;
     }
 
     @Override
