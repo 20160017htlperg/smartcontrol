@@ -6,11 +6,11 @@ import io.javalin.Context;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class FakeRelais extends Relais {
+public class SonofRelais extends Relais {
 
     private String IP = "";
 
-    public FakeRelais(String name, String location, int id,String IP) {
+    public SonofRelais(String name, String location, int id, String IP) {
         super(name, location, id);
         this.IP = IP;
     }
