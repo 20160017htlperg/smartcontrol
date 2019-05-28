@@ -33,6 +33,7 @@ public class Verwaltung {
         if(RelaisList.add(r)) {
             app.get(RelaisPath+r.getName().toLowerCase()+"/",r::calledWithGet);
             app.get(RelaisPath+r.getName().toLowerCase()+"/toggle/",r::toggle);
+            app.get(RelaisPath+r.getName().toLowerCase()+"/ison/",r::IsOn);
             return true;
         }
 

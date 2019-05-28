@@ -2,6 +2,8 @@ package com.company.Komponenten.Relais;
 
 import io.javalin.Context;
 
+import java.net.MalformedURLException;
+
 
 public abstract class Relais {
     private String name;
@@ -22,13 +24,18 @@ public abstract class Relais {
     }
 
     public void calledWithGet(Context ctx) {
-        String res = "{ " +
-                "relaisname : " + getName() + ", " +
-                "location : " + getLocation() + ", " +
-                "relais_id : " + getId() + ", " +
-                "favourite: " + favourite + ", " +
-                "ison: " + getIsOn() + "}";
-        ctx.result(res);
+        String res = null;
+        try {
+            res = "{ " +
+                    "relaisname : " + getName() + ", " +
+                    "location : " + getLocation() + ", " +
+                    "relais_id : " + getId() + ", " +
+                    "favourite: " + favourite + ", " +
+                    "ison: " + getIsOn() + "}";
+            ctx.result(res);
+        } catch (Exception e) {
+            ctx.result("null");
+        }
     }
 
     public String getName() {
@@ -43,7 +50,19 @@ public abstract class Relais {
         return relais_id;
     }
 
-    public abstract boolean getIsOn();
+    public void IsOn(Context ctx){
+        try {
+            if(getIsOn()){
+                ctx.result("true");
+            }else{
+                ctx.result("false");
+            }
+        } catch (Exception e) {
+            ctx.result("null");
+        }
+    }
+
+    public abstract boolean getIsOn() throws Exception;
     public abstract void toggle(Context ctx);
     public abstract void extendActiveTime(Context ctx,int time);
 }

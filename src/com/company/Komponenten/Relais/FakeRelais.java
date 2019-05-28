@@ -1,6 +1,10 @@
 package com.company.Komponenten.Relais;
 
+import com.company.Utils.Rest_Services;
 import io.javalin.Context;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class FakeRelais extends Relais {
 
@@ -12,13 +16,21 @@ public class FakeRelais extends Relais {
     }
 
     @Override
-    public boolean getIsOn() {
-        return false;
+    public boolean getIsOn() throws Exception {
+            if(Rest_Services.rest_GET(new URL("http://"+IP+"/?m=1")).trim().toUpperCase().contains("OFF")){
+                return (false);
+            }
+            return (true);
     }
 
     @Override
     public void toggle(Context ctx) {
-        ctx.result("true");
+        try {
+            Rest_Services.rest_GET(new URL("http://"+IP+"/?m=1&o=1"));
+            ctx.result("true");
+        }catch (Exception e) {
+            ctx.result("null");
+        }
     }
 
     @Override
