@@ -31,6 +31,6 @@ public class Setup {
     }
 
     private void initRelais(){
-        vsys.addToRelais(new FakeRelais("buchi","gucci",5));
+        vsys.addToRelais(new FakeRelais("buchi","gucci",5,"192.168.137.2"));
     }
 }
