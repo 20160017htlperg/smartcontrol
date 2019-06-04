@@ -1,6 +1,7 @@
 package com.company.Komponenten;
 
 import com.company.Komponenten.Relais.SonofRelais;
+import com.company.Komponenten.Sensoren.DHT11_Sensor;
 import com.company.Komponenten.Sensoren.FakeSensor;
 import com.company.Komponenten.Sensoren.Sensor;
 
@@ -16,7 +17,7 @@ public class Setup {
         vsys = new Verwaltung(port);
         //initSensors();
         initRelais();
-        //vsys.addToSensor(new DHT11_Sensor("DHT11_Sensor",2,"celsius",10000000,"Garage",true));
+        vsys.addToSensor(new DHT11_Sensor("DHT11_Sensor",2,"celsius",10000000,"Garage",true));
     }
 
     private void initSensors(){
@@ -30,6 +31,6 @@ public class Setup {
     }
 
     private void initRelais(){
-        vsys.addToRelais(new SonofRelais("buchi","gucci",5,"192.168.137.2"));
+        vsys.addToRelais(new SonofRelais("buchi","gucci",5,"192.168.137.64"));
     }
 }
