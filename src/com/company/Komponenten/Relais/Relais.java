@@ -2,9 +2,6 @@ package com.company.Komponenten.Relais;
 
 import io.javalin.Context;
 
-import java.net.MalformedURLException;
-
-
 public abstract class Relais {
     private String name;
     private String location;
