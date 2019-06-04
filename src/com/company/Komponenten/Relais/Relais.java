@@ -10,24 +10,24 @@ public abstract class Relais {
 
 
     public Relais(String name, String location, int id) {
-        this.name = name;
-        this.location = location;
-        this.relais_id = id;
-        favourite = false;
-    }
+                this.name = name;
+                this.location = location;
+                this.relais_id = id;
+                favourite = false;
+            }
 
-    public void setFavourite(boolean favourite) {
-        this.favourite = favourite;
-    }
+            public void setFavourite(boolean favourite) {
+                this.favourite = favourite;
+            }
 
-    public void calledWithGet(Context ctx) {
-        String res = null;
-        try {
-            res = "{ " +
-                    "\"relaisname\" : \"" + getName() + "\", " +
-                    "\"location\" : \"" + getLocation() + "\", " +
-                    "\"relais_id\" : " + getId() + ", " +
-                    "\"favourite\": " + favourite + ", " +
+            public void calledWithGet(Context ctx) {
+                String res = null;
+                try {
+                    res = "{ " +
+                            "\"relaisname\" : \"" + getName() + "\", " +
+                            "\"location\" : \"" + getLocation() + "\", " +
+                            "\"relais_id\" : " + getId() + ", " +
+                            "\"favourite\": " + favourite + ", " +
                     "\"ison\": " + getIsOn() + "}";
             ctx.result(res);
         } catch (Exception e) {
