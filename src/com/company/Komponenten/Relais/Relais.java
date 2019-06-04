@@ -27,11 +27,11 @@ public abstract class Relais {
         String res = null;
         try {
             res = "{ " +
-                    "relaisname : " + getName() + ", " +
-                    "location : " + getLocation() + ", " +
-                    "relais_id : " + getId() + ", " +
-                    "favourite: " + favourite + ", " +
-                    "ison: " + getIsOn() + "}";
+                    "\"relaisname\" : \"" + getName() + "\", " +
+                    "\"location\" : \"" + getLocation() + "\", " +
+                    "\"relais_id\" : " + getId() + ", " +
+                    "\"favourite\": " + favourite + ", " +
+                    "\"ison\": " + getIsOn() + "}";
             ctx.result(res);
         } catch (Exception e) {
             ctx.result("null");

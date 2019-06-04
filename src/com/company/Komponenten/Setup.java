@@ -32,5 +32,8 @@ public class Setup {
 
     private void initRelais(){
         vsys.addToRelais(new SonofRelais("buchi","gucci",5,"192.168.137.64"));
+        vsys.addToRelais(new SonofRelais("roland","gucci",5,"192.168.137.64"));
+        vsys.addToRelais(new SonofRelais("jank","gucci",5,"192.168.137.64"));
+        vsys.addToRelais(new SonofRelais("edii","gucci",5,"192.168.137.64"));
     }
 }
